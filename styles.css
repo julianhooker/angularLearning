@@ -1,0 +1,39 @@
+/* tables */
+.div-table{
+  display:table;         
+  width:auto;              
+  border:1px solid  #666666;
+}
+.div-table-row{
+  display:table-row;
+  width:auto;
+  clear:both;
+}
+.div-table-col{
+  float:left;
+  display:table-column;         
+  width:200px;         
+}
+.div-table-header {
+	display: table-header-group;
+	width:200px;
+	float:left;
+	font-weight: bold;
+}
+
+/* arrows */
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-bottom: 5px solid black;
+}
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent; 
+  border-top: 5px solid black;
+}

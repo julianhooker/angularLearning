@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.min.js"></script>
+	<script src="javascript.js"></script>
+
+	<body ng-app="grades">
+		<div ng-controller="gradesCtrl">
+			<div>
+				<p>Select a department to filter courses</p>
+				<select ng-model="deptFilter">
+					<option ng-repeat="grade in grades | orderBy: 'subject.description' | unique: 'subject.description'">{{ grade.subject.description }}</option>
+				</select>
+			</div>
+
+			<div>
+				<div> {{ departmentName }}</div>
+				<div ng-repeat="grade in grades | filter:deptFilter">
+					<p>
+						Course: {{ grade.courseTitle | uppercase }} <br />
+						Department: {{ grade.subject.description }} <br />
+						Level: {{ grade.level.code | uppercase }} <br />
+						Grade: {{ grade.gradeInAcadHistory }} <br />
+						Term: {{ grade.term.description }}
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
