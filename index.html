@@ -2,7 +2,7 @@
 <html>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.min.js"></script>
 	<script src="javascript.js"></script>
 
 	<body ng-app="grades">
@@ -10,8 +10,10 @@
 			<div>
 				<p>Select a department to filter courses</p>
 				<select ng-model="deptFilter">
+					<option value="">Any</option>
 					<option ng-repeat="grade in grades | orderBy: 'subject.description' | unique: 'subject.description'">{{ grade.subject.description }}</option>
 				</select>
+				<button ng-click="toggleGrades()">{{ showHideButtonText() }}</button>
 			</div>
 
 			<div>
@@ -21,7 +23,7 @@
 						Course: {{ grade.courseTitle | uppercase }} <br />
 						Department: {{ grade.subject.description }} <br />
 						Level: {{ grade.level.code | uppercase }} <br />
-						Grade: {{ grade.gradeInAcadHistory }} <br />
+						<span ng-show="showGrades">Grade: {{ grade.gradeInAcadHistory }} <br /></span>
 						Term: {{ grade.term.description }}
 					</p>
 				</div>

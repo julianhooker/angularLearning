@@ -3,11 +3,25 @@ app.controller('gradesCtrl', function($scope) {
 
 	$scope.deptFilter = '';
 
+	// Showing/Hiding the grades
+	$scope.showGrades = false;
 
+	$scope.showHideButtonText = function () {
+		if ($scope.showGrades) {
+			return "Hide Grades";
+		} else {
+			return "Show Grades";
+		}
+	}
+
+	$scope.toggleGrades = function () {
+		$scope.showGrades = !$scope.showGrades;
+	};
+
+	// Playing with $watch
 	$scope.$watch('deptFilter', function() {
 		console.log ('deptFilter: ', $scope.deptFilter);
-		console.log ('deptFilter.subject: ',  $scope.deptFilter.subject);
-	})
+	});
 
 	$scope.grades = [
 		  {
