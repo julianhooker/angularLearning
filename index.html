@@ -14,10 +14,14 @@
 					<option ng-repeat="grade in grades | orderBy: 'subject.description' | unique: 'subject.description'">{{ grade.subject.description }}</option>
 				</select>
 				<button ng-click="toggleGrades()">{{ showHideButtonText() }}</button>
+
+				<br />
+
+				Search cources <input ng-model="inputFilter.courseTitle" type="text">
 			</div>
 
 			<div>
-				<div ng-repeat="grade in grades | filter:deptFilter">
+				<div ng-repeat="grade in grades | filter:deptFilter | filter:inputFilter">
 					<p>
 						Course: {{ grade.courseTitle }} <br />
 						Department: {{ grade.subject.description }} <br />
@@ -27,7 +31,10 @@
 					</p>
 				</div>
 
-				<div ng-show="deptFilter"> Filtered for {{ departmentName }}</div>
+				<span ng-show="deptFilter">Filtered for {{ departmentName }}</span>
+				<span ng-show="deptFilter && inputFilter.courseTitle">and</span>
+				<span ng-show="inputFilter.courseTitle && !deptFilter">Filtered for courses</span>
+				<span ng-show="inputFilter.courseTitle">"{{ inputFilter.courseTitle }}"</span>
 			</div>
 		</div>
 	</body>
