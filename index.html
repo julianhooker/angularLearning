@@ -21,7 +21,7 @@
 			</div>
 
 			<div>
-				<div ng-repeat="grade in grades | filter:deptFilter | filter:inputFilter">
+				<div ng-repeat="grade in grades | filter:deptFilter | filter:inputFilter as filteredCourses">
 					<p>
 						Course: {{ grade.courseTitle }} <br />
 						Department: {{ grade.subject.description }} <br />
@@ -30,6 +30,8 @@
 						Term: {{ grade.term.description }}
 					</p>
 				</div>
+
+				<div>Showing {{ filteredCourses.length }} courses.</div>
 
 				<span ng-show="deptFilter">Filtered for {{ departmentName }}</span>
 				<span ng-show="deptFilter && inputFilter.courseTitle">and</span>
