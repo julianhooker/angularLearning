@@ -1,5 +1,5 @@
 var app = angular.module('grades', ['angular.filter']);
-app.controller('gradesCtrl', function($scope) {
+app.controller('gradesCtrl', function($scope, getDataService, $q) {
 
 	$scope.deptFilter = '';
 
@@ -23,7 +23,15 @@ app.controller('gradesCtrl', function($scope) {
 		console.log ('deptFilter: ', $scope.deptFilter);
 	});
 
-	$scope.grades = [
+	var gradesPromise = getDataService.getGrades();
+
+	gradesPromise.then(function (grades) {$scope.grades = grades; });
+});
+
+// Setting up a factory to get the data. This is basically a stub. In the future, we 
+//    would grab the data directly from the web service. 
+app.factory('getDataService', function($q, $timeout) {
+	var grades = [
 		  {
 		    "courseNumber": "2371",
 		    "courseTitle": "Analy Tech Solv E E Prob",
@@ -1482,4 +1490,15 @@ app.controller('gradesCtrl', function($scope) {
 		  }
 		];
 
+	return {
+		getGrades: function () {
+			var defer = $q.defer();
+
+			$timeout(function() {
+				defer.resolve(grades);
+			}, Math.random() * 3000);
+
+			return defer.promise;
+		}
+	}
 });
