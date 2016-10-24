@@ -17,16 +17,17 @@
 			</div>
 
 			<div>
-				<div> {{ departmentName }}</div>
 				<div ng-repeat="grade in grades | filter:deptFilter">
 					<p>
-						Course: {{ grade.courseTitle | uppercase }} <br />
+						Course: {{ grade.courseTitle }} <br />
 						Department: {{ grade.subject.description }} <br />
 						Level: {{ grade.level.code | uppercase }} <br />
 						<span ng-show="showGrades">Grade: {{ grade.gradeInAcadHistory }} <br /></span>
 						Term: {{ grade.term.description }}
 					</p>
 				</div>
+
+				<div ng-show="deptFilter"> Filtered for {{ departmentName }}</div>
 			</div>
 		</div>
 	</body>

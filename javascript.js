@@ -21,10 +21,11 @@ app.controller('gradesCtrl', function($scope, getDataService, $q) {
 	// Playing with $watch
 	$scope.$watch('deptFilter', function() {
 		console.log ('deptFilter: ', $scope.deptFilter);
+		$scope.departmentName = $scope.deptFilter;
 	});
 
+	// Make a call to get the data
 	var gradesPromise = getDataService.getGrades();
-
 	gradesPromise.then(function (grades) {$scope.grades = grades; });
 });
 
