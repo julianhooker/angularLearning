@@ -67,7 +67,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "92251",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -95,7 +95,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "96669",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C-",
+		    "gradeInAcadHistory": "B-",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -207,7 +207,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "99352",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -235,7 +235,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "95398",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -263,7 +263,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "96668",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -431,7 +431,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 4,
 		    "crn": "88432",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -571,7 +571,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "88856",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "D",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -627,7 +627,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "96342",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -991,7 +991,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "99357",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -1075,7 +1075,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "94597",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "C",
+		    "gradeInAcadHistory": "B",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -1159,7 +1159,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "95779",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "D+",
+		    "gradeInAcadHistory": "C",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
@@ -1187,7 +1187,7 @@ app.factory('getDataService', function($q, $timeout) {
 		    "creditHour": 3,
 		    "crn": "91957",
 		    "gradeFinal": null,
-		    "gradeInAcadHistory": "D",
+		    "gradeInAcadHistory": "C",
 		    "gradeMidterm": null,
 		    "gradeRolled": "Y",
 		    "level": {
