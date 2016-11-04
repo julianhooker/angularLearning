@@ -9,25 +9,27 @@
 		<div ng-controller="gradesCtrl">
 			<div>
 				<p>Select a department to filter courses</p>
+
+				Search Courses:  <input ng-model="inputFilter.courseTitle" type="text">
+				
+				Department: 
 				<select ng-model="deptFilter">
 					<option value="">Any</option>
 					<option ng-repeat="grade in grades | orderBy: 'subject.description' | unique: 'subject.description'">{{ grade.subject.description }}</option>
 				</select>
 				<button ng-click="toggleGrades()">{{ showHideButtonText() }}</button>
-
-				<br />
-
-				Search cources <input ng-model="inputFilter.courseTitle" type="text">
 			</div>
 
 			<div>
 				<div ng-repeat="grade in grades | filter:deptFilter | filter:inputFilter as filteredCourses">
 					<p>
-						Course: {{ grade.courseTitle }} <br />
-						Department: {{ grade.subject.description }} <br />
-						Level: {{ grade.level.code | uppercase }} <br />
-						<span ng-show="showGrades">Grade: {{ grade.gradeInAcadHistory }} <br /></span>
-						Term: {{ grade.term.description }}
+						<span ng-style="{color: labelColor}">Course:</span> {{ grade.courseTitle }} <br />
+						<span ng-style="{color: labelColor}">Department:</span> {{ grade.subject.description }} <br />
+						<span ng-style="{color: labelColor}">Level:</span> {{ grade.level.code | uppercase }} <br />
+						<span ng-show="showGrades">
+							<span ng-style="{color: labelColor}">Grade:</span> {{ grade.gradeInAcadHistory }} <br />
+						</span>
+						<span ng-style="{color: labelColor}">Term:</span> {{ grade.term.description }}
 					</p>
 				</div>
 
@@ -38,6 +40,10 @@
 				<span ng-show="inputFilter.courseTitle && !deptFilter">Filtered for courses</span>
 				<span ng-show="inputFilter.courseTitle">"{{ inputFilter.courseTitle }}"</span>
 			</div>
+
+			<p>Formatting Options:</p>
+
+			Change label color to: <input ng-model="labelColor">
 		</div>
 	</body>
 </html>

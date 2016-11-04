@@ -1,6 +1,8 @@
 var app = angular.module('grades', ['angular.filter']);
 app.controller('gradesCtrl', function($scope, getDataService, $q) {
 
+	// Style information
+
 	$scope.deptFilter = '';
 
 	// Showing/Hiding the grades
@@ -28,6 +30,17 @@ app.controller('gradesCtrl', function($scope, getDataService, $q) {
 	var gradesPromise = getDataService.getGrades();
 	gradesPromise.then(function (grades) {$scope.grades = grades; });
 });
+
+
+
+
+
+
+
+
+
+
+
 
 // Setting up a factory to get the data. This is basically a stub. In the future, we 
 //    would grab the data directly from the web service. 
