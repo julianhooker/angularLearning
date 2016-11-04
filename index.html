@@ -21,7 +21,7 @@
 			</div>
 
 			<div>
-				<div ng-repeat="grade in grades | filter:deptFilter | filter:inputFilter as filteredCourses">
+				<div ng-repeat="grade in grades | filter:deptFilter | filter:inputFilter as filteredCourses" ng-class-even="'even'" ng-class-odd="'odd'">
 					<p>
 						<span ng-style="{color: labelColor}">Course:</span> {{ grade.courseTitle }} <br />
 						<span ng-style="{color: labelColor}">Department:</span> {{ grade.subject.description }} <br />
