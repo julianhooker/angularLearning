@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.11/angular-filter.js"></script>
 	<script src="javascript.js"></script>
 
-	<body ng-app="grades">
-		<div ng-controller="gradesCtrl">
+	<body ng-app="transcript">
+		<div ng-controller="coursesCtrl">
 			<div>
 				<p>Select a department to filter courses</p>
 
@@ -15,21 +15,15 @@
 				Department: 
 				<select ng-model="deptFilter">
 					<option value="">Any</option>
-					<option ng-repeat="grade in grades | orderBy: 'subject.description' | unique: 'subject.description'">{{ grade.subject.description }}</option>
+					<option ng-repeat="course in courses | orderBy: 'subject.description' | unique: 'subject.description'">{{ course.subject.description }}</option>
 				</select>
 				<button ng-click="toggleGrades()">{{ showHideButtonText() }}</button>
 			</div>
 
 			<div>
-				<div ng-repeat="grade in grades | filter:deptFilter | filter:inputFilter as filteredCourses" ng-class-even="'even'" ng-class-odd="'odd'">
+				<div ng-repeat="course in courses | filter:deptFilter | filter:inputFilter as filteredCourses" ng-class-even="'even'" ng-class-odd="'odd'">
 					<p>
-						<span ng-style="{color: labelColor}">Course:</span> {{ grade.courseTitle }} <br />
-						<span ng-style="{color: labelColor}">Department:</span> {{ grade.subject.description }} <br />
-						<span ng-style="{color: labelColor}">Level:</span> {{ grade.level.code | uppercase }} <br />
-						<span ng-show="showGrades">
-							<span ng-style="{color: labelColor}">Grade:</span> {{ grade.gradeInAcadHistory }} <br />
-						</span>
-						<span ng-style="{color: labelColor}">Term:</span> {{ grade.term.description }}
+						<course-template></course-template> <br />
 					</p>
 				</div>
 

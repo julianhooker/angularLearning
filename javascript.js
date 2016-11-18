@@ -1,5 +1,5 @@
-var app = angular.module('grades', ['angular.filter']);
-app.controller('gradesCtrl', function($scope, getDataService, $q) {
+var app = angular.module('transcript', ['angular.filter']);
+app.controller('coursesCtrl', function($scope, getDataService, $q) {
 
 	// Style information
 
@@ -22,15 +22,21 @@ app.controller('gradesCtrl', function($scope, getDataService, $q) {
 
 	// Playing with $watch
 	$scope.$watch('deptFilter', function() {
-		console.log ('deptFilter: ', $scope.deptFilter);
 		$scope.departmentName = $scope.deptFilter;
 	});
 
 	// Make a call to get the data
-	var gradesPromise = getDataService.getGrades();
-	gradesPromise.then(function (grades) {$scope.grades = grades; });
+	var gradesPromise = getDataService.getCourses();
+	gradesPromise.then(function (courses) {$scope.courses = courses; });
+
 });
 
+app.directive('courseTemplate', function () {
+  return {
+  	restrict: 'E',
+    templateUrl: 'templates/course-template.html',
+  };
+});
 
 
 
@@ -45,7 +51,7 @@ app.controller('gradesCtrl', function($scope, getDataService, $q) {
 // Setting up a factory to get the data. This is basically a stub. In the future, we 
 //    would grab the data directly from the web service. 
 app.factory('getDataService', function($q, $timeout) {
-	var grades = [
+	var courses = [
 		  {
 		    "courseNumber": "2371",
 		    "courseTitle": "Analy Tech Solv E E Prob",
@@ -1505,11 +1511,11 @@ app.factory('getDataService', function($q, $timeout) {
 		];
 
 	return {
-		getGrades: function () {
+		getCourses: function () {
 			var defer = $q.defer();
 
 			$timeout(function() {
-				defer.resolve(grades);
+				defer.resolve(courses);
 			}, Math.random() * 3000);
 
 			return defer.promise;
