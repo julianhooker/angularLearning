@@ -43,6 +43,24 @@ app.directive('courseTemplate', function () {
   };
 });
 
+app.directive('highlight', function() {
+	return {
+
+  	restrict: 'A',
+    link: function (scope,element,atts) {
+     	element.bind("mouseover", function () {
+     		element.addClass("cursorOver");
+     		console.log ("mouseover");
+     	});
+
+     	element.bind("mouseout", function() {
+     		element.removeClass("cursorOver");
+     		console.log ("mouseout");
+     	});
+     }
+  };
+})
+
 
 
 
