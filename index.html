@@ -23,7 +23,7 @@
 			<div>
 				<div ng-repeat="course in courses | filter:deptFilter | filter:inputFilter as filteredCourses" ng-class-even="'even'" ng-class-odd="'odd'">
 					<p>
-						<course-template></course-template> <br />
+						<course-template course="course" show-course="showGrades"></course-template> <br />
 					</p>
 				</div>
 

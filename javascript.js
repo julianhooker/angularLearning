@@ -33,8 +33,13 @@ app.controller('coursesCtrl', function($scope, getDataService, $q) {
 
 app.directive('courseTemplate', function () {
   return {
+
   	restrict: 'E',
     templateUrl: 'templates/course-template.html',
+    scope: { 
+    	dirCourse: '=course', 
+    	dirShowGrades: '=showCourse',
+     }
   };
 });
 

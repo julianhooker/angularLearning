@@ -1,7 +1,7 @@
-<span ng-style="{color: labelColor}">Course:</span> {{ course.courseTitle }} <br />
-<span ng-style="{color: labelColor}">Department:</span> {{ course.subject.description }} <br />
-<span ng-style="{color: labelColor}">Level:</span> {{ course.level.code | uppercase }} <br />
-<span ng-show="showGrades">
-	<span ng-style="{color: labelColor}">Grade:</span> {{ course.gradeInAcadHistory }} <br />
+<span ng-style="{color: labelColor}">Course:</span> {{ dirCourse.courseTitle }} <br />
+<span ng-style="{color: labelColor}">Department:</span> {{ dirCourse.subject.description }} <br />
+<span ng-style="{color: labelColor}">Level:</span> {{ dirCourse.level.code | uppercase }} <br />
+<span ng-show="dirShowGrades">
+	<span ng-style="{color: labelColor}">Grade:</span> {{ dirCourse.gradeInAcadHistory }} <br />
 </span>
-<span ng-style="{color: labelColor}">Term:</span> {{ course.term.description }}
+<span ng-style="{color: labelColor}">Term:</span> {{ dirCourse.term.description }}
