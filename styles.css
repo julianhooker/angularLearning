@@ -8,3 +8,7 @@
 .cursorOver {
   background-color: lightgreen;
 }
+
+.marked {
+  color: purple;
+}

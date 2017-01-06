@@ -4,4 +4,5 @@
 <span ng-show="dirShowGrades">
 	<span ng-style="{color: labelColor}">Grade:</span> {{ dirCourse.gradeInAcadHistory }} <br />
 </span>
-<span ng-style="{color: labelColor}">Term:</span> {{ dirCourse.term.description }}
+<span ng-style="{color: labelColor}">Term:</span> {{ dirCourse.term.description }} <br />
+<button ng-click="markCourse()"> {{ markedText }}</button>

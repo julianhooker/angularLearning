@@ -39,6 +39,19 @@ app.directive('courseTemplate', function () {
     scope: { 
     	dirCourse: '=course', 
     	dirShowGrades: '=showCourse',
+     },
+     controller: function ($scope, $element) {
+     	$scope.markedText = "Mark";
+
+     	$scope.markCourse = function () {
+     		if ($scope.markedText == "Mark") {
+     			$element.addClass("marked");
+     			$scope.markedText = "Unmark";
+     		} else {
+     			$element.removeClass("marked");
+     			$scope.markedText = "Unmark";
+     		}
+     	}
      }
   };
 });
@@ -47,15 +60,15 @@ app.directive('highlight', function() {
 	return {
 
   	restrict: 'A',
-    link: function (scope,element,atts) {
+    link: function (scope,element) {
      	element.bind("mouseover", function () {
      		element.addClass("cursorOver");
-     		console.log ("mouseover");
+     		//console.log ("mouseover");
      	});
 
      	element.bind("mouseout", function() {
      		element.removeClass("cursorOver");
-     		console.log ("mouseout");
+     		//console.log ("mouseout");
      	});
      }
   };
@@ -1539,7 +1552,7 @@ app.factory('getDataService', function($q, $timeout) {
 
 			$timeout(function() {
 				defer.resolve(courses);
-			}, Math.random() * 3000);
+			}, Math.random() * 30);
 
 			return defer.promise;
 		}
