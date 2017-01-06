@@ -1,4 +1,6 @@
-<span ng-style="{color: labelColor}">Course:</span> {{ dirCourse.courseTitle }} <br />
+<span ng-transclude></span>
+
+<span ng-style="{color: labelColor}">Title:</span> {{ dirCourse.courseTitle }} <br />
 <span ng-style="{color: labelColor}">Department:</span> {{ dirCourse.subject.description }} <br />
 <span ng-style="{color: labelColor}">Level:</span> {{ dirCourse.level.code | uppercase }} <br />
 <span ng-show="dirShowGrades">

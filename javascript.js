@@ -5,6 +5,8 @@ app.controller('coursesCtrl', function($scope, getDataService, $q) {
 
 	$scope.deptFilter = '';
 
+	$scope.labelColor = 'pink';
+
 	// Showing/Hiding the grades
 	$scope.showGrades = false;
 
@@ -39,17 +41,19 @@ app.directive('courseTemplate', function () {
     scope: { 
     	dirCourse: '=course', 
     	dirShowGrades: '=showCourse',
+    	labelColor: '=labelColor'
      },
+     transclude: true,
      controller: function ($scope, $element) {
-     	$scope.markedText = "Mark";
+     	$scope.markedText = "Mark Course";
 
      	$scope.markCourse = function () {
-     		if ($scope.markedText == "Mark") {
+     		if ($scope.markedText == "Mark Course") {
      			$element.addClass("marked");
-     			$scope.markedText = "Unmark";
+     			$scope.markedText = "Unmark Course";
      		} else {
      			$element.removeClass("marked");
-     			$scope.markedText = "Unmark";
+     			$scope.markedText = "Mark Course";
      		}
      	}
      }
